@@ -23,6 +23,7 @@ function App() {
         <h3>Color Generator</h3>
         <form onSubmit={handleSubmit}>
           <input
+            className={`${error ? "error" : null}`}
             type="text"
             value={color}
             placeholder="#f15025"
