@@ -6,7 +6,12 @@ const SingleColor = ({ rgb, weight, hexColor, index }) => {
   const bcg = rgb.join(",");
   // const hex = rgbToHex(...rgb);  // this can also be used to display the hex code of the colors
   const hexValue = `#${hexColor}`;
-
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAlert(false);
+    }, 3000);
+    return () => clearTimeout(timeout);
+  }, [alert]);
   const handleColorClick = () => {
     setAlert(true);
     navigator.clipboard.writeText(hexValue);
